@@ -1,0 +1,33 @@
+<h1>Spread</h1>
+
+<script>
+
+    let frutas = ['laranja', 'maca', 'banana', 'melancia'];
+    let animais = ['cachorro', 'coelho', 'tartaruga', 'gato'];
+
+    let combinacao = [...frutas, ...animais];
+
+    // Imprime os elementos como String
+    console.log(...combinacao)
+
+    // Imprime os elementos como array de string
+    console.log(combinacao)
+
+    // o paramentro rest(...), permite apresentar numeros indefinidos de elemento como uma matriz
+    const order = [20.17, 18.67, 1.50, "cheese", "eggs", "milk", "bread"];
+
+    // Aqui criamos 4 variaveis individuais as quais os elementos acima iram taxar seu valor.
+    const [total, subtotal, tax, ...items] = order;
+    console.log(total, subtotal, tax, items);
+
+    const myPackege = ['ovo', 'queijo', 'manteiga', 'pao', 'brigadeiro'];
+    console.log(...myPackege);
+
+    printPackegeContents('ovo', 'queijo', 'manteiga', 'pao', 'brigadeiro');
+    function printPackegeContents(...itens) {
+        for(const item of itens) {
+            console.log(item);
+        }
+    }
+    printPackegeContents();
+</script>

@@ -1,50 +1,47 @@
 * {
-    font-family: sans-serif;
+    font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-.opcoes-game {
+h1 {
+    color: #bf386b;
+    font-size: 50px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.select {
+    color: #bf386b;
+}
+
+.config-game {
     display: flex;
-    justify-content: center;
-    padding-top: 30px;
+    font-size: 24px;
+    justify-content: space-evenly;
+    margin: 20px 220px;
+    text-align: center;
 }
 
-ul {
+.container-game {
+    background-color: #efc935db;
+    border-radius: 30px;
+    box-shadow: 3px 4px 13px 4px;
+    margin: 30px 15px;
+    padding: 30px 0;
+}
+
+.block-letters {
     display: flex;
-    list-style: none;
-    padding: 0 60px;
+    justify-content: space-evenly;
+    padding: 20px 0px;
 }
 
-li {
-    padding: 3px;
-}
-
-i {
-    color: black;
-}
-
-main {
-    background-color: red;
-    margin: 10px;
-    height: 300px;
-    border-radius: 15px;
-}
-
-.container-board {
-    background-color: black;
-    padding: 20px 100px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.letter-memory {
-    background-color: white;
-    border-radius: 15px;
-    width: 150px;
-    height: 150px;
-}
-
-div img {
-    width: 150px;
+.letters {
+    background-color: #de437db3;
+    border-radius: 20px;
+    box-shadow: 3px 4px 3px 1px;
+    height: 20px;
+    padding: 80px;
+    width: 30px;
 }
