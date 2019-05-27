@@ -4,15 +4,23 @@
     padding: 0;
 }
 
+body {
+    /* background-image: url(../img/88652.jpg) */
+}
+
 h1 {
-    color: #bf386b;
+    color: #b32215;
     font-size: 50px;
     margin: 30px 0;
     text-align: center;
 }
 
-.select {
-    color: #bf386b;
+main {
+    margin: 0 100px;
+}
+
+.star-select {
+    color: #b32215;
 }
 
 .config-game {
@@ -28,20 +36,49 @@ h1 {
     border-radius: 30px;
     box-shadow: 3px 4px 13px 4px;
     margin: 30px 15px;
-    padding: 30px 0;
+    padding: 20px 20px;
 }
 
 .block-letters {
     display: flex;
     justify-content: space-evenly;
-    padding: 20px 0px;
+    padding: 15px 0px;
 }
 
 .letters {
-    background-color: #de437db3;
+    background-color: #b32215;
     border-radius: 20px;
     box-shadow: 3px 4px 3px 1px;
-    height: 20px;
-    padding: 80px;
-    width: 30px;
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+    list-style-type: none;
 }
+
+.letters i {
+    display: none;
+}
+
+.letters i.--is-active {
+    display: block;
+    font-size: 80px;
+    text-align: center;
+    margin: 23% 30% 0 25%;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media(min-width: 1100px) {
+    .block-letters {
+        padding: 15px 150px;
+    }
+
+    .container-game {
+        margin: 30px 80px;
+        padding: 10px 0;
+    }
+}
+
