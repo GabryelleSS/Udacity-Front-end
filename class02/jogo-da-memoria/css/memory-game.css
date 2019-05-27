@@ -55,11 +55,15 @@ main {
     list-style-type: none;
 }
 
-.letters i {
+.letters.--is-active {
+    background-color: orange;
+}
+
+i.cardIcon {
     display: none;
 }
 
-.letters i.--is-active {
+i.cardIcon.--is-active {
     display: block;
     font-size: 80px;
     text-align: center;
