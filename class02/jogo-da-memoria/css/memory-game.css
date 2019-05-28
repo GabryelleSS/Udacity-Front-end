@@ -80,8 +80,19 @@ footer {
 }
 
 @media(min-width: 1100px) {
+
+    main {
+        margin: 0 300px;
+    }
+
     .block-letters {
-        padding: 15px 150px;
+        padding: 15px 10px;
+    }
+    
+    .letters {
+        width: 130px;
+        height: 130px;
+        margin: -5px -5px;
     }
 
     .container-game {

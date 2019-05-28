@@ -1,8 +1,7 @@
 const memoryGame = (function() {
 
     let letters = document.querySelectorAll('li');
-    let  numberCardsPlays = document.querySelector('span')
-    // let numberPlays = 0;
+    let  numberCardsPlays = document.querySelector('span');
 
     function _listLetters() {
         letters.forEach(function(letter) {
@@ -18,15 +17,11 @@ const memoryGame = (function() {
             letter.addEventListener('click', function() {
                 numberPlays++;
 
-                if(numberPlays === 0) {
-                    numberCardsPlays.textContent = " "
-                    console.log(numberPlays)
-                }
                 if(numberPlays === 1) {
-                    numberCardsPlays.textContent = `${numberPlays} Move`
+                    numberCardsPlays.textContent = `${numberPlays} Move`;
                 }
                 else {
-                    numberCardsPlays.textContent = `${numberPlays} Moves`
+                    numberCardsPlays.textContent = `${numberPlays} Moves`;
                 }
             })
         })
@@ -39,8 +34,8 @@ const memoryGame = (function() {
             letters.forEach(function(letter) {
                 letter.classList.remove('--is-visible');
             })
-            _quantityPlays(0);
             numberCardsPlays.textContent = " ";
+            _quantityPlays(0);
         })
     }
 
