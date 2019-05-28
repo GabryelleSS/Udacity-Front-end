@@ -7,9 +7,11 @@ const memoryGame = (function() {
         letters.forEach(function(letter) {
             letter.addEventListener('click', function() {
                 letter.classList.toggle('--is-visible');
-            })
+
+            });
             _quantityPlays(0);
-        })
+            _lastUpdate(1);
+        });
     }
 
     function _quantityPlays(numberPlays) {
@@ -27,12 +29,13 @@ const memoryGame = (function() {
         })
     }
 
-    function _lastUpdate() {
+    function _lastUpdate(timer) {
         let containerTimer = document.querySelector('.timer');
-        let timer = 1;
 
         setInterval(function() {
             containerTimer.textContent = timer;
+
+            console.log(timer)
 
             timer++;
         }, 1000)
@@ -53,7 +56,6 @@ const memoryGame = (function() {
     function init() {
         _listLetters();
         _refresh();
-        _lastUpdate();
     }
 
     return {

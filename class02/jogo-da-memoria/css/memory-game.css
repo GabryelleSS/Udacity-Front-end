@@ -35,6 +35,10 @@ main {
     padding-left: 30px;
 }
 
+.refrash {
+    cursor: pointer;
+}
+
 span.timer {
     padding-left: 10px;
 }
