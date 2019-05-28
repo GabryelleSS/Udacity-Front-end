@@ -23,12 +23,20 @@ main {
     color: #b32215;
 }
 
-.config-game {
+.score-game {
     display: flex;
     font-size: 24px;
-    justify-content: space-evenly;
-    margin: 20px 220px;
+    justify-content: space-between;
+    margin: 20px 170px;
     text-align: center;
+}
+
+.config-game i {
+    padding-left: 30px;
+}
+
+span.timer {
+    padding-left: 10px;
 }
 
 .container-game {
@@ -53,10 +61,12 @@ main {
     width: 150px;
     cursor: pointer;
     list-style-type: none;
+    
 }
 
 .letters i {
     display: none;
+    transition: 21s all ease;
 }
 
 i.card-icon {

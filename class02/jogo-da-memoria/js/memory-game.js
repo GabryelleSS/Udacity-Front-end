@@ -27,8 +27,19 @@ const memoryGame = (function() {
         })
     }
 
+    function _lastUpdate() {
+        let containerTimer = document.querySelector('.timer');
+        let timer = 1;
+
+        setInterval(function() {
+            containerTimer.textContent = timer;
+
+            timer++;
+        }, 1000)
+    }
+
     function _refresh() {
-        let arrowRefresh = document.querySelector('.arrow-refresh');
+        let arrowRefresh = document.querySelector('.config-game');
 
         arrowRefresh.addEventListener('click', function() {
             letters.forEach(function(letter) {
@@ -42,6 +53,7 @@ const memoryGame = (function() {
     function init() {
         _listLetters();
         _refresh();
+        _lastUpdate();
     }
 
     return {
