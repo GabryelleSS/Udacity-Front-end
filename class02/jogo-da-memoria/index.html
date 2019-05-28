@@ -5,7 +5,7 @@
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-        <script src="js/scripts.js" defer></script>
+        <script src="js/memory-game.js" defer></script>
     </head>
 
     <body>
@@ -30,73 +30,73 @@
             <div class="container-game">
                 <ul class="block-letters">
                     <li class="letters">
-                        <i class="fab fa-jedi-order cardIcon"></i>
+                        <i class="fab fa-jedi-order card-icon"></i>
                     </li>
 
                     <li class="letters">
-                        <i class="fab fa-jedi-order cardIcon"></i>
+                        <i class="fab fa-jedi-order card-icon"></i>
                     </li>
 
                     <li class="letters">
-                        <i class="fas fa-hamburger cardIcon"></i>         
+                        <i class="fas fa-hamburger card-icon"></i>         
                     </li>
 
                     <li class="letters">
-                        <i class="fas fa-hamburger cardIcon"></i>
-                    </li>
-
-                </ul>
-                <ul class="block-letters">
-                    <li class="letters">
-                        <i class="fas fa-quidditch cardIcon"></i>
-                    </li>
-
-                    <li class="letters">
-                        <i class="fas fa-quidditch cardIcon"></i>
-                    </li>
-
-                    <li class="letters">
-                        <i class="fab fa-galactic-republic cardIcon"></i>
-                    </li>
-
-                    <li class="letters">
-                        <i class="fab fa-galactic-republic cardIcon"></i>
+                        <i class="fas fa-hamburger card-icon"></i>
                     </li>
 
                 </ul>
                 <ul class="block-letters">
                     <li class="letters">
-                        <i class="fab fa-battle-net cardIcon"></i>
+                        <i class="fas fa-quidditch "></i>
                     </li>
 
                     <li class="letters">
-                        <i class="fab fa-battle-net cardIcon"></i>
+                        <i class="fas fa-quidditch "></i>
                     </li>
 
                     <li class="letters">
-                        <i class="fas fa-dragon cardIcon"></i>
+                        <i class="fab fa-galactic-republic "></i>
                     </li>
 
                     <li class="letters">
-                        <i class="fas fa-dragon cardIcon"></i>
+                        <i class="fab fa-galactic-republic "></i>
                     </li>
 
                 </ul>
                 <ul class="block-letters">
                     <li class="letters">
-                        <i class="fas fa-ghost cardIcon"></i>
+                        <i class="fab fa-battle-net "></i>
                     </li>
 
                     <li class="letters">
-                        <i class="fas fa-ghost cardIcon"></i>
+                        <i class="fab fa-battle-net "></i>
                     </li>
 
                     <li class="letters">
-                        <i class="fab fa-optin-monster cardIcon"></i>
+                        <i class="fas fa-dragon "></i>
                     </li>
 
                     <li class="letters">
-                        <i class="fab fa-optin-monster cardIcon"></i>
+                        <i class="fas fa-dragon "></i>
+                    </li>
+
+                </ul>
+                <ul class="block-letters">
+                    <li class="letters">
+                        <i class="fas fa-ghost "></i>
+                    </li>
+
+                    <li class="letters">
+                        <i class="fas fa-ghost "></i>
+                    </li>
+
+                    <li class="letters">
+                        <i class="fab fa-optin-monster "></i>
+                    </li>
+
+                    <li class="letters">
+                        <i class="fab fa-optin-monster "></i>
                     </li>
                 </ul>
             </div>
@@ -106,5 +106,11 @@
             <p>Gabryelle Silva Santos</p>
             <p>2019</p>
         </footer>
+
+        <script>
+            window.onload = function() {
+                memoryGame.init();
+            }
+        </script>
     </body>
 </html>

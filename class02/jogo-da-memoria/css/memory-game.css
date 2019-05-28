@@ -55,19 +55,23 @@ main {
     list-style-type: none;
 }
 
-.letters.--is-active {
-    background-color: orange;
-}
-
-i.cardIcon {
+.letters i {
     display: none;
 }
 
-i.cardIcon.--is-active {
-    display: block;
+i.card-icon {
+    display: none;
+}
+
+.letters.--is-visible i {
+    display: flex;
     font-size: 80px;
-    text-align: center;
-    margin: 23% 30% 0 25%;
+    justify-content: center;
+    margin: 30px;
+}
+
+.letters.--is-visible {
+    background-color: orange;
 }
 
 footer {
