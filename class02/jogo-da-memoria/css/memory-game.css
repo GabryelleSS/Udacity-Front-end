@@ -5,7 +5,7 @@
 }
 
 h1 {
-    background: -webkit-linear-gradient(#b32215, #d8571a, #ffcd00);
+    background: -webkit-linear-gradient(#751919, #a90e00, #ffcd00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 50px;
@@ -23,7 +23,7 @@ i.star-complet {
 
 i.star-complet.--is-visible {
     display: initial;
-    color: #b32215;
+    color: #a90e00;
 }
 
 .score-game {
@@ -39,7 +39,7 @@ i.star-complet.--is-visible {
 }
 
 .refrash:hover {
-    background: -webkit-linear-gradient(#b32215, #d8571a, #ffcd00);
+    background: -webkit-linear-gradient(#751919, #a90e00, #ffcd00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: 1s ease all;
@@ -56,9 +56,9 @@ span {
 }
 
 .container-game {
-    background-color: #efc935db;
+    background-color: #484848;
     border-radius: 30px;
-    box-shadow: 3px 4px 13px 4px;
+    box-shadow: 18px 23px 40px -4px;
     margin: 30px 15px;
     padding: 20px 20px;
 }
@@ -71,7 +71,7 @@ span {
 }
 
 .letters {
-    background-color: #b32215;
+    background-color: #862118;
     border-radius: 20px;
     box-shadow: 3px 4px 3px 1px;
     height: 150px;
@@ -84,6 +84,7 @@ span {
 .letters i {
     display: none;
     transition: 21s all ease;
+    color: #fff;
 }
 
 i.card-icon {
@@ -98,12 +99,14 @@ i.card-icon {
 }
 
 .letters.--is-visible {
-    background-color: orange;
+    background-color: #272527;
 }
 
 .modal-winner {
-    background-color: #317fb5bd;
+    background-color: #484848;
     margin: 0 120px;
+    display: none;
+    color: white;
 }
 
 .modal-winner header {
@@ -121,7 +124,7 @@ h3 {
 .btn-try-again {
     width: 100%;
     border: 1px;
-    background-color: #165282;
+    background-color: #862118;
     outline: none;
     padding: 5px;
     font-size: 20px;
@@ -129,7 +132,7 @@ h3 {
 }
 
 .btn-try-again:hover {
-    color: #033864;
+    color: #862118;
     background-color: #f3f3f3;
     transition: 1s ease all;
 }
