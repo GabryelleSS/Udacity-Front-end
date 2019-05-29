@@ -27,9 +27,9 @@ const memoryGame = (function() {
         });
     }
 
-    function _mixTheLetters() {
+    function _mixLetters() {
         letters.forEach(function(letter) {
-            let ramdomCartas = Math.floor(Math.random() * 16);
+            let ramdomCartas = Math.floor(Math.random() * 16) + 1;
 
             letter.style.order = ramdomCartas;
         })
@@ -59,11 +59,12 @@ const memoryGame = (function() {
             })
             numberCardsPlays.textContent = " ";
             _quantityPlays(0);
+            _mixLetters();
         })
     }
 
     function init() {
-        _mixTheLetters();
+        _mixLetters();
         _listLetters();
         _refresh();
     }
