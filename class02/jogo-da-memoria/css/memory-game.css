@@ -101,9 +101,42 @@ i.card-icon {
     background-color: orange;
 }
 
+.modal-winner {
+    background-color: #317fb5bd;
+    margin: 0 120px;
+}
+
+.modal-winner header {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    line-height: 18px;
+    font-size: 20px;
+}
+
+h3 {
+    padding-right: 20px;
+}
+
+.btn-try-again {
+    width: 100%;
+    border: 1px;
+    background-color: #165282;
+    outline: none;
+    padding: 5px;
+    font-size: 20px;
+    color: #f3f3f3;
+}
+
+.btn-try-again:hover {
+    color: #033864;
+    background-color: #f3f3f3;
+    transition: 1s ease all;
+}
+
 footer {
     text-align: center;
-    padding: 50px 0;
+    padding-top: 50px;
 }
 
 @media(min-width: 982px) {
