@@ -5,6 +5,15 @@ const memoryGame = (function() {
     let containerTimer = document.querySelector('.timer');
     let contador = 1;
 
+    function _lastTimer(timer) {
+        setInterval(function() {
+            containerTimer.textContent = timer;
+            timer++;
+
+            console.log(timer);
+        }, 1000)
+    }
+
     function _listLetters() {
         letters.forEach(function(letter) {
             letter.addEventListener('click', function() {
@@ -16,6 +25,14 @@ const memoryGame = (function() {
             });
             _quantityPlays(0);
         });
+    }
+
+    function _mixTheLetters() {
+        letters.forEach(function(letter) {
+            let ramdomCartas = Math.floor(Math.random() * 16);
+
+            letter.style.order = ramdomCartas;
+        })
     }
 
     function _quantityPlays(numberPlays) {
@@ -32,15 +49,6 @@ const memoryGame = (function() {
             })
         })
     }
-    
-    function _lastTimer(timer) {
-        setInterval(function() {
-            containerTimer.textContent = timer;
-            timer++;
-
-            console.log(timer);
-        }, 1000)
-    }
 
     function _refresh() {
         let arrowRefresh = document.querySelector('.config-game');
@@ -55,6 +63,7 @@ const memoryGame = (function() {
     }
 
     function init() {
+        _mixTheLetters();
         _listLetters();
         _refresh();
     }
