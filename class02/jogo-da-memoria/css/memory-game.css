@@ -1,11 +1,13 @@
 * {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Didact Gothic', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 h1 {
-    color: #b32215;
+    background: -webkit-linear-gradient(#b32215, #d8571a, #ffcd00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 50px;
     margin: 30px 0;
     text-align: center;
@@ -15,7 +17,12 @@ main {
     margin: 0 100px;
 }
 
-.star-select {
+i.star-complet {
+    display: none;
+}
+
+i.star-complet.--is-visible {
+    display: initial;
     color: #b32215;
 }
 
@@ -32,7 +39,9 @@ main {
 }
 
 .refrash:hover {
-    color: #efc935db;
+    background: -webkit-linear-gradient(#b32215, #d8571a, #ffcd00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     transition: 1s ease all;
     transform: rotate(360deg);
 }
@@ -41,8 +50,9 @@ main {
     padding-left: 20px;
 }
 
-span.timer {
-    padding-left: 10px;
+span {
+    padding-left: 20px;
+    font-family: sans-serif;
 }
 
 .container-game {
@@ -93,7 +103,7 @@ i.card-icon {
 
 footer {
     text-align: center;
-    padding-top: 50px;
+    padding: 50px 0;
 }
 
 @media(min-width: 982px) {

@@ -23,7 +23,7 @@ const memoryGame = (function() {
                 }
                 contador++
             });
-            _quantityPlays(0);
+            _quantityPlays(1);
         });
     }
 
@@ -38,7 +38,6 @@ const memoryGame = (function() {
     function _quantityPlays(numberPlays) {
         letters.forEach(function(letter) {
             letter.addEventListener('click', function() {
-                numberPlays++;
 
                 if(numberPlays === 1) {
                     numberCardsPlays.textContent = `${numberPlays} Move`;
@@ -46,7 +45,35 @@ const memoryGame = (function() {
                 else {
                     numberCardsPlays.textContent = `${numberPlays} Moves`;
                 }
+
+                function _scoreStars() {
+                    let stars = document.querySelectorAll('.star-complet');
+
+                    if(numberPlays < 16) {
+                        stars.forEach(function(star) {
+                            star.classList.add('--is-visible');
+                            console.log(star)
+                        })
+                    }
+                    // else if(numberPlays < 21) {
+                    //     console.log('Duas estrela')
+                    // }
+                    // else {
+                    //     console.log('Uma estrela')
+                    // }
+                }
+
+                _scoreStars();
+                numberPlays++;
             })
+        })
+    }
+
+    function removeStars() {
+        let stars = document.querySelectorAll('.star-complet');
+        stars.forEach(function(star) {
+            star.classList.remove('--is-visible');
+            console.log(star)
         })
     }
 
@@ -58,10 +85,11 @@ const memoryGame = (function() {
                 letter.classList.remove('--is-visible');
             })
             numberCardsPlays.textContent = " ";
-            _quantityPlays(0);
+            _quantityPlays(1);
             _mixLetters();
-        })
-    }
+            removeStars();
+            })
+        }
 
     function init() {
         _mixLetters();
