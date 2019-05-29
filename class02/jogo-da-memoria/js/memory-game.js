@@ -2,15 +2,19 @@ const memoryGame = (function() {
 
     let letters = document.querySelectorAll('li');
     let  numberCardsPlays = document.querySelector('span');
+    let containerTimer = document.querySelector('.timer');
+    let contador = 1;
 
     function _listLetters() {
         letters.forEach(function(letter) {
             letter.addEventListener('click', function() {
                 letter.classList.toggle('--is-visible');
-
+                if(contador === 1) {
+                    _lastTimer(1);
+                }
+                contador++
             });
             _quantityPlays(0);
-            _lastUpdate(1);
         });
     }
 
@@ -28,16 +32,13 @@ const memoryGame = (function() {
             })
         })
     }
-
-    function _lastUpdate(timer) {
-        let containerTimer = document.querySelector('.timer');
-
+    
+    function _lastTimer(timer) {
         setInterval(function() {
             containerTimer.textContent = timer;
-
-            console.log(timer)
-
             timer++;
+
+            console.log(timer);
         }, 1000)
     }
 
