@@ -4,10 +4,6 @@
     padding: 0;
 }
 
-body {
-    /* background-image: url(../img/88652.jpg) */
-}
-
 h1 {
     color: #b32215;
     font-size: 50px;
@@ -31,12 +27,18 @@ main {
     text-align: center;
 }
 
-.config-game i {
-    padding-left: 30px;
-}
-
 .refrash {
     cursor: pointer;
+}
+
+.refrash:hover {
+    color: #efc935db;
+    transition: 1s ease all;
+    transform: rotate(360deg);
+}
+
+.clock {
+    padding-left: 20px;
 }
 
 span.timer {
@@ -91,82 +93,57 @@ i.card-icon {
 
 footer {
     text-align: center;
-    margin-bottom: 20px;
+    padding-top: 50px;
 }
 
 @media(min-width: 982px) {
     .container-game {
-        padding: 20px 40px;
+        padding: 0 10px;
     }
 }
 
-@media(min-width: 1020px) {
+@media(min-width: 1000px) {
+    .container-game {
+        margin: 0 80px;
+    }
+}
 
-    main {
-        margin: 0px 95px;
+@media (min-width: 1130px){
+    .container-game {
+        margin: 0px 100px;
+    }
+}
+
+@media(min-width: 1170px) { 
+    .container-game {
+        margin: 0 150px;
     }
 
-    .block-letters {
-        /* padding: 15px 10px; */
+    .score-game {
+        margin: 20px 300px;
     }
-    
-    /* .letters {
-        width: 130px;
-        height: 130px;
-        margin: -5px -5px;
-    } */
+
+}
+
+@media(min-width: 1290px) {
+    .container-game {
+        margin: 0 200px;
+    }
+
+}
+
+@media(min-width: 1370px) {
 
     .container-game {
-        /* margin: 30px 80px;
-        padding: 10px 0; */
+        margin: 0 230px;
     }
+
 }
 
-@media(min-width: 1060px) {
+@media(min-width: 1430px) {
 
     .container-game {
-        padding: 20px 100px;
+        margin: 0 264px;
     }
 
 }
-
-@media(min-width: 1120px) {
-
-    .container-game {
-        padding: 20px 115px;
-    }
-
-}
-
-@media(min-width: 1200px) {
-
-    .container-game {
-        padding: 20px 125px;
-    }
-
-}
-
-@media(min-width: 1219px) {
-
-    .container-game {
-        padding: 20px 150px;
-    }
-
-}
-
-@media(min-width: 1270px) {
-
-    .container-game {
-        padding: 20px 200px;
-    }
-
-}
-
-@media(min-width: 1300px) {
-
-    .container-game {
-        padding: 20px 250px;
-    }
-
-}
-
