@@ -102,14 +102,14 @@ span {
     padding: 20px 20px;
 }
 
-.block-letters {
+.block-cards {
     display: flex;
     justify-content: space-evenly;
     padding: 15px 0px;
     flex-wrap: wrap;
 }
 
-.letters {
+.cards {
     background-color: #862118;
     border-radius: 20px;
     box-shadow: 3px 4px 3px 1px;
@@ -120,7 +120,7 @@ span {
     margin: 15px 0;
 }
 
-.letters i {
+.cards i {
     display: none;
     transition: 21s all ease;
     color: #fff;
@@ -130,14 +130,14 @@ i.card-icon {
     display: none;
 }
 
-.letters.--is-visible i {
+.cards.--is-visible i {
     display: flex;
     font-size: 80px;
     justify-content: center;
     margin: 30px;
 }
 
-.letters.--is-visible {
+.cards.--is-visible {
     background-color: #272527;
 }
 

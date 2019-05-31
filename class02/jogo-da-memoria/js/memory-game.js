@@ -1,6 +1,6 @@
 const memoryGame = (function() {
 
-    let letters = document.querySelectorAll('li');
+    let cards = document.querySelectorAll('li');
     let numberCardsPlays = document.querySelector('.moves');
     let containerTimer = document.querySelector('.timer');
     let contador = 1;
@@ -24,30 +24,57 @@ const memoryGame = (function() {
         }
     }
 
-    function _listLetters() {
-        letters.forEach(function(letter) {
-            letter.addEventListener('click', function() {
-                letter.classList.toggle('--is-visible');
-                if(contador === 1) {
+    function _listCards() {
+        cards.forEach(function(card) {
+            card.addEventListener('click', function() {
+
+                let cardsVisibles= document.querySelectorAll('.cards.--is-visible') ;
+                
+                if(cardsVisibles.length == 2){
+                    _refreshCards();
+                }
+
+                card.classList.toggle('--is-visible');
+                cardsVisibles = document.querySelectorAll('.cards.--is-visible') ;
+                
+                if(cardsVisibles.length == 2) {
+                    let iguais = (
+                        cardsVisibles[0].querySelector('i').className == cardsVisibles[1].querySelector('i').className
+                    )
+
+                    if(iguais) {
+                        console.log(cardsVisibles)
+                        cardsVisibles.forEach(function(cardVisible) {
+                            console.log('Sao iguais') 
+                            cardVisible.classList.add('--is-visible');
+                        })
+                    }
+                    else {
+                        console.log('Nao sao iguais')
+                    }
+                }
+                
+                if(contador == 1) {
                     _timer();
                 }
+
                 contador++;
             });
         });
         _quantityPlays(1);
     }
 
-    function _mixLetters() {
-        letters.forEach(function(letter) {
+    function _mixcards() {
+        cards.forEach(function(card) {
             let ramdomCartas = Math.floor(Math.random() * 16) + 1;
 
-            letter.style.order = ramdomCartas;
+            card.style.order = ramdomCartas;
         })
     }
 
     function _quantityPlays(numberPlays) {
-        letters.forEach(function(letter) {
-            letter.onclick = function() {
+        cards.forEach(function(card) {
+            card.onclick = function() {
                 if(numberPlays === 1) {
                     numberCardsPlays.textContent = `${numberPlays} Move`;
                 }
@@ -69,8 +96,8 @@ const memoryGame = (function() {
         let starThree = document.querySelector('.star-three');
         let starThreeNotSelectActive = document.querySelector('.star-three-not-select');
 
-        letters.forEach(function(letter) {
-            letter.addEventListener('click', function() {
+        cards.forEach(function(card) {
+            card.addEventListener('click', function() {
                 if(contadorDeCartas > 30) {
                     starThree.classList.add('--is-disable');
                     starThreeNotSelectActive.classList.add('--is-active');
@@ -96,9 +123,9 @@ const memoryGame = (function() {
         })
     }
     
-    function _refreshLetters() {
-        letters.forEach(function(letter) {
-            letter.classList.remove('--is-visible');
+    function _refreshCards() {
+        cards.forEach(function(card) {
+            card.classList.remove('--is-visible');
         })
     }
 
@@ -106,8 +133,8 @@ const memoryGame = (function() {
         let arrowRefresh = document.querySelector('.refrash');
 
         arrowRefresh.addEventListener('click', function() {
-            _refreshLetters();
-            _mixLetters();
+            _refreshCards();
+            _mixcards();
             numberCardsPlays.textContent = " ";
             contadorDeCartas = 1;
             _quantityPlays(1);
@@ -117,8 +144,8 @@ const memoryGame = (function() {
     }
 
     function init() {
-        _mixLetters();
-        _listLetters();
+        _mixcards();
+        _listCards();
         _refresh();
         _scoreStars();  
     }
