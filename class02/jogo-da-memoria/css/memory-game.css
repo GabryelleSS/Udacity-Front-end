@@ -152,10 +152,14 @@ i.card-icon {
     background-color: #272527;
 }
 
+.modal-winner.--is-active {
+    display: none;
+}
+
 .modal-winner {
     background-color: #484848;
     margin: 0 120px;
-    display: none;
+    display: block;
     color: white;
 }
 

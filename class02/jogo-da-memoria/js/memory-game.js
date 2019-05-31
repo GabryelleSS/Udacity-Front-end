@@ -3,6 +3,7 @@ const memoryGame = (function() {
     let cards = document.querySelectorAll('li');
     let numberCardsPlays = document.querySelector('.moves');
     let containerTimer = document.querySelector('.timer');
+    let cardsVisibles= document.querySelectorAll('.cards.--is-visible') ;
     let contador = 1;
     let contadorDeCartas = 1;
     let time = 0;
@@ -23,19 +24,17 @@ const memoryGame = (function() {
             contador = 1;
         }
     }
-
+   
     function _listCards() {
         cards.forEach(function(card) {
             card.addEventListener('click', function() {
 
-                let cardsVisibles= document.querySelectorAll('.cards.--is-visible') ;
-                
                 if(cardsVisibles.length == 2){
                     _refreshCards();
                 }
 
                 card.classList.toggle('--is-visible');
-                cardsVisibles = document.querySelectorAll('.cards.--is-visible') ;
+                cardsVisibles = document.querySelectorAll('.cards.--is-visible');
                 
                 if(cardsVisibles.length == 2) {
                     let iguais = (
@@ -48,7 +47,18 @@ const memoryGame = (function() {
                         })
                     }
                 }
-                
+
+                if(!document.querySelectorAll('.cards:not(.--is-correct)').length) {
+                    let containerGame = document.querySelector('.container-game');
+                    let modalWinner = document.querySelector('.modal-winner');
+
+                    // modalWinner.classList.remove('--is-active ')
+                    containerGame.appendChild(modalWinner);
+
+                    console.log(containerGame);
+                    console.log('terminou')
+                }
+
                 if(contador == 1) {
                     _timer();
                 }
