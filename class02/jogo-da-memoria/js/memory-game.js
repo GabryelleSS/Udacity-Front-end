@@ -1,17 +1,27 @@
-    const memoryGame = (function() {
+const memoryGame = (function() {
 
     let letters = document.querySelectorAll('li');
     let numberCardsPlays = document.querySelector('.moves');
     let containerTimer = document.querySelector('.timer');
     let contador = 1;
+    let contadorDeCartas = 1;
+    let time = 0;
+    let interval;
 
-    function _timer(timer) {
-        setInterval(function() {
-            containerTimer.textContent = timer;
-            timer++;
-
-            // console.log(timer);
+    function _timer() {
+        interval = setInterval(function() {
+            containerTimer.textContent = time;
+            time++;
         }, 1000)
+    }
+
+    function _clearTimer() {
+        if(_refresh) {
+            clearInterval(interval);
+            time = 0;
+            containerTimer.textContent = time;
+            contador = 1;
+        }
     }
 
     function _listLetters() {
@@ -19,12 +29,12 @@
             letter.addEventListener('click', function() {
                 letter.classList.toggle('--is-visible');
                 if(contador === 1) {
-                    _timer(1);
+                    _timer();
                 }
-                contador++
+                contador++;
             });
-            _quantityPlays(1);
         });
+        _quantityPlays(1);
     }
 
     function _mixLetters() {
@@ -37,22 +47,19 @@
 
     function _quantityPlays(numberPlays) {
         letters.forEach(function(letter) {
-            letter.addEventListener('click', function() {
-
+            letter.onclick = function() {
                 if(numberPlays === 1) {
                     numberCardsPlays.textContent = `${numberPlays} Move`;
                 }
                 else {
                     numberCardsPlays.textContent = `${numberPlays} Moves`;
                 }
-                // console.log(numberPlays)
                 numberPlays++;
-            })
+            }
         })
     }
 
     function _scoreStars() {
-        let contadorDeCartas = 1;
         let starOne = document.querySelector('.star-one');
         let starOneNotSelectActive = document.querySelector('.star-one-not-select');
 
@@ -64,54 +71,60 @@
 
         letters.forEach(function(letter) {
             letter.addEventListener('click', function() {
-                if(contadorDeCartas  > 16) {
-                    starOne.classList.add('--is-disable');
-                    starOneNotSelectActive.classList.add('--is-active');
-                } 
-                if(contadorDeCartas > 24) {
-                    starTwo.classList.add('--is-disable');
-                    starTwoNotSelectActive.classList.add('--is-active');
-                } 
                 if(contadorDeCartas > 30) {
                     starThree.classList.add('--is-disable');
                     starThreeNotSelectActive.classList.add('--is-active');
+                }
+                else if(contadorDeCartas > 24) {
+                    starTwo.classList.add('--is-disable');
+                    starTwoNotSelectActive.classList.add('--is-active');
+                } 
+                else if(contadorDeCartas  > 16) { 
+                    starOne.classList.add('--is-disable');
+                    starOneNotSelectActive.classList.add('--is-active');
                 }
                 contadorDeCartas++;
             })
         })
     }
 
-    _scoreStars();
-
-    function removeStars() {
+    function _refreshStars() {
         let stars = document.querySelectorAll('.star-complet');
         stars.forEach(function(star) {
-            star.classList.remove('--is-visible');
-            console.log(star)
+            star.classList.remove('--is-disable');
+            star.classList.remove('--is-active');
+        })
+    }
+    
+    function _refreshLetters() {
+        letters.forEach(function(letter) {
+            letter.classList.remove('--is-visible');
         })
     }
 
     function _refresh() {
-        let arrowRefresh = document.querySelector('.config-game');
+        let arrowRefresh = document.querySelector('.refrash');
 
         arrowRefresh.addEventListener('click', function() {
-            letters.forEach(function(letter) {
-                letter.classList.remove('--is-visible');
-            })
-            numberCardsPlays.textContent = " ";
-            _quantityPlays(1);
+            _refreshLetters();
             _mixLetters();
-            removeStars();
-            })
-        }
+            numberCardsPlays.textContent = " ";
+            contadorDeCartas = 1;
+            _quantityPlays(1);
+            _refreshStars();
+            _clearTimer();
+        })
+    }
 
     function init() {
         _mixLetters();
         _listLetters();
         _refresh();
+        _scoreStars();  
     }
 
     return {
         init,
     }
+
 }());
