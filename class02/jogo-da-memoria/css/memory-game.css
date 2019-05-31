@@ -21,9 +21,49 @@ i.star-complet {
     display: none;
 }
 
-i.star-complet.--is-visible {
-    display: initial;
-    color: #a90e00;
+span.star-complet {
+    padding: 0;
+    
+}
+
+.star-complet {
+    color: #862118;
+}
+
+.star-one.--is-disable {
+    display: none;
+}
+
+.star-one-not-select {
+    display: none;
+}
+
+.star-one-not-select.--is-active {
+    display: inline-block;
+}
+
+.star-two.--is-disable {
+    display: none;
+}
+
+.star-two-not-select {
+    display: none;
+}
+
+.star-two-not-select.--is-active {
+    display: inline-block;
+}
+
+.star-three.--is-disable {
+    display: none;
+}
+
+.star-three-not-select {
+    display: none;
+}
+
+.star-three-not-select.--is-active {
+    display: inline-block;
 }
 
 .score-game {
@@ -51,7 +91,6 @@ i.star-complet.--is-visible {
 }
 
 span {
-    padding-left: 20px;
     font-family: sans-serif;
 }
 

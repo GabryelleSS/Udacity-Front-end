@@ -1,16 +1,16 @@
-const memoryGame = (function() {
+    const memoryGame = (function() {
 
     let letters = document.querySelectorAll('li');
-    let  numberCardsPlays = document.querySelector('span');
+    let numberCardsPlays = document.querySelector('.moves');
     let containerTimer = document.querySelector('.timer');
     let contador = 1;
 
-    function _lastTimer(timer) {
+    function _timer(timer) {
         setInterval(function() {
             containerTimer.textContent = timer;
             timer++;
 
-            console.log(timer);
+            // console.log(timer);
         }, 1000)
     }
 
@@ -19,7 +19,7 @@ const memoryGame = (function() {
             letter.addEventListener('click', function() {
                 letter.classList.toggle('--is-visible');
                 if(contador === 1) {
-                    _lastTimer(1);
+                    _timer(1);
                 }
                 contador++
             });
@@ -45,29 +45,43 @@ const memoryGame = (function() {
                 else {
                     numberCardsPlays.textContent = `${numberPlays} Moves`;
                 }
-
-                function _scoreStars() {
-                    let stars = document.querySelectorAll('.star-complet');
-
-                    if(numberPlays < 16) {
-                        stars.forEach(function(star) {
-                            star.classList.add('--is-visible');
-                            console.log(star)
-                        })
-                    }
-                    // else if(numberPlays < 21) {
-                    //     console.log('Duas estrela')
-                    // }
-                    // else {
-                    //     console.log('Uma estrela')
-                    // }
-                }
-
-                _scoreStars();
+                // console.log(numberPlays)
                 numberPlays++;
             })
         })
     }
+
+    function _scoreStars() {
+        let contadorDeCartas = 1;
+        let starOne = document.querySelector('.star-one');
+        let starOneNotSelectActive = document.querySelector('.star-one-not-select');
+
+        let starTwo = document.querySelector('.star-two');
+        let starTwoNotSelectActive = document.querySelector('.star-two-not-select');
+
+        let starThree = document.querySelector('.star-three');
+        let starThreeNotSelectActive = document.querySelector('.star-three-not-select');
+
+        letters.forEach(function(letter) {
+            letter.addEventListener('click', function() {
+                if(contadorDeCartas  > 16) {
+                    starOne.classList.add('--is-disable');
+                    starOneNotSelectActive.classList.add('--is-active');
+                } 
+                if(contadorDeCartas > 24) {
+                    starTwo.classList.add('--is-disable');
+                    starTwoNotSelectActive.classList.add('--is-active');
+                } 
+                if(contadorDeCartas > 30) {
+                    starThree.classList.add('--is-disable');
+                    starThreeNotSelectActive.classList.add('--is-active');
+                }
+                contadorDeCartas++;
+            })
+        })
+    }
+
+    _scoreStars();
 
     function removeStars() {
         let stars = document.querySelectorAll('.star-complet');
