@@ -24,6 +24,8 @@ const memoryGame = (function() {
         }
     }
 
+    
+
     function _listCards() {
         cards.forEach(function(card) {
             card.addEventListener('click', function() {
