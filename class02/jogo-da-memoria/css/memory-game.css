@@ -141,6 +141,17 @@ i.card-icon {
     background-color: #272527;
 }
 
+.cards.--is-correct i {
+    display: flex;
+    font-size: 80px;
+    justify-content: center;
+    margin: 30px;
+}
+
+.cards.--is-correct {
+    background-color: #272527;
+}
+
 .modal-winner {
     background-color: #484848;
     margin: 0 120px;

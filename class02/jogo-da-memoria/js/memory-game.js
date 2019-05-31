@@ -24,8 +24,6 @@ const memoryGame = (function() {
         }
     }
 
-    
-
     function _listCards() {
         cards.forEach(function(card) {
             card.addEventListener('click', function() {
@@ -45,14 +43,9 @@ const memoryGame = (function() {
                     )
 
                     if(iguais) {
-                        console.log(cardsVisibles)
                         cardsVisibles.forEach(function(cardVisible) {
-                            console.log('Sao iguais') 
-                            cardVisible.classList.add('--is-visible');
+                            cardVisible.classList.add('--is-correct');
                         })
-                    }
-                    else {
-                        console.log('Nao sao iguais')
                     }
                 }
                 
@@ -131,6 +124,12 @@ const memoryGame = (function() {
         })
     }
 
+    function _refreshCardsSelect() {
+        cards.forEach(function(card) {
+            card.classList.remove('--is-correct');
+        })
+    }
+
     function _refresh() {
         let arrowRefresh = document.querySelector('.refrash');
 
@@ -142,10 +141,11 @@ const memoryGame = (function() {
             _quantityPlays(1);
             _refreshStars();
             _clearTimer();
+            _refreshCardsSelect();
         })
     }
 
-    function init() {
+    function initGame() {
         _mixcards();
         _listCards();
         _refresh();
@@ -153,7 +153,6 @@ const memoryGame = (function() {
     }
 
     return {
-        init,
+        initGame,
     }
-
 }());
