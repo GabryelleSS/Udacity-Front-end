@@ -52,16 +52,11 @@ const memoryGame = (function() {
 
                     totalTime.textContent = `Tempo: ${containerTimer.textContent}`;
                     totalScore.textContent = `Pontuação: ${numberCardsPlays.textContent}`;
-
-                    console.log(containerGame);
-                    console.log('terminou')
                 }
-
-
+                
                 if(contador == 1) {
                     _timer();
                 }
-
                 contador++;
             });
         });
