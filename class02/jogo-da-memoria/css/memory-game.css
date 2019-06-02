@@ -152,23 +152,33 @@ i.card-icon {
     background-color: #272527;
 }
 
-.modal-winner.--is-active {
+.modal-winner {
     display: none;
 }
 
-.modal-winner {
-    background-color: #484848;
-    margin: 0 120px;
+.modal-winner.--is-active {
+    background-color: #862118;
     display: block;
     color: white;
+    position: absolute;
+    margin: -480px 155px;
+    border-radius: 10px;
+    width: 415px;
+    box-shadow: 3px 5px 15px 3px #000;
+    transition: all 5s ease-in-out;
 }
 
-.modal-winner header {
+.modal-winner.--is-active header {
     display: flex;
     justify-content: center;
     padding-top: 20px;
     line-height: 18px;
     font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.modal-winner.--is-active main {
+    margin: 0;
 }
 
 h3 {
@@ -178,16 +188,18 @@ h3 {
 .btn-try-again {
     width: 100%;
     border: 1px;
-    background-color: #862118;
+    border-radius: 5px;
+    background-color: #fff;
     outline: none;
     padding: 5px;
     font-size: 20px;
-    color: #f3f3f3;
+    color: #862118;
+    cursor: pointer
 }
 
 .btn-try-again:hover {
-    color: #862118;
-    background-color: #f3f3f3;
+    color: #fff;
+    background-color: #862118;
     transition: 1s ease all;
 }
 

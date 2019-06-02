@@ -3,18 +3,12 @@ const memoryGame = (function() {
     let cards = document.querySelectorAll('li');
     let numberCardsPlays = document.querySelector('.moves');
     let containerTimer = document.querySelector('.timer');
-    let cardsVisibles= document.querySelectorAll('.cards.--is-visible') ;
+    let cardsVisibles= document.querySelectorAll('.cards.--is-visible');
+    let modalWinner = document.querySelector('.modal-winner');
     let contador = 1;
     let contadorDeCartas = 1;
     let time = 0;
     let interval;
-
-    function _timer() {
-        interval = setInterval(function() {
-            containerTimer.textContent = time;
-            time++;
-        }, 1000)
-    }
 
     function _clearTimer() {
         if(_refresh) {
@@ -24,7 +18,7 @@ const memoryGame = (function() {
             contador = 1;
         }
     }
-   
+    
     function _listCards() {
         cards.forEach(function(card) {
             card.addEventListener('click', function() {
@@ -50,14 +44,19 @@ const memoryGame = (function() {
 
                 if(!document.querySelectorAll('.cards:not(.--is-correct)').length) {
                     let containerGame = document.querySelector('.container-game');
-                    let modalWinner = document.querySelector('.modal-winner');
-
-                    // modalWinner.classList.remove('--is-active ')
+                    let totalTime = document.querySelector('.total-time');
+                    let totalScore = document.querySelector('.total-score');
+                    
+                    modalWinner.classList.add('--is-active');
                     containerGame.appendChild(modalWinner);
+
+                    totalTime.textContent = `Tempo: ${containerTimer.textContent}`;
+                    totalScore.textContent = `Pontuação: ${numberCardsPlays.textContent}`;
 
                     console.log(containerGame);
                     console.log('terminou')
                 }
+
 
                 if(contador == 1) {
                     _timer();
@@ -67,7 +66,32 @@ const memoryGame = (function() {
             });
         });
         _quantityPlays(1);
+        tryAgain();
     }
+
+    function tryAgain() {
+        let btnTryAgain = document.querySelector('.btn-try-again');
+
+        btnTryAgain.addEventListener('click', function() {
+            _refreshCards();
+            _mixcards();
+            numberCardsPlays.textContent = " ";
+            contadorDeCartas = 1;
+            _quantityPlays(1);
+            _refreshStars();
+            _clearTimer();
+            _refreshCardsSelect();
+            modalWinner.classList.remove('--is-active');
+        }) 
+    }
+
+    function _timer() {
+        interval = setInterval(function() {
+            containerTimer.textContent = time;
+            time++;
+        }, 1000)
+    }
+   
 
     function _mixcards() {
         cards.forEach(function(card) {
