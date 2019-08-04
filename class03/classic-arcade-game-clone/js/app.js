@@ -8,6 +8,7 @@ var Enemy = function() {
     this.sprite = 'images/enemy-bug.png';
 };
 
+
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
@@ -44,3 +45,46 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+
+class Hero {
+    constructor() {
+        this.x = 200;
+        this.y = 400;
+        this.jump = 88;
+        this.step = 100;
+        this.sprite = 'images/char-boy.png';
+    }
+
+    render() {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+
+    handleInput(input) {
+        if(input === 'left') {
+            if(this.x > 0) {
+                this.x -= this.step;
+            }
+        }
+        
+        if(input === 'right') {
+            if(this.x < this.step * 4) {
+                this.x += this.step;
+            }
+        }
+
+        if(input === 'up') {
+            if(this.y > 0) {
+                this.y -= this.jump;
+            }
+        }
+
+        if(input === 'down') {
+            if(this.y < this.jump * 4) {
+                this.y += this.jump;
+            }
+        }
+    }
+}
+
+let player = new Hero();
