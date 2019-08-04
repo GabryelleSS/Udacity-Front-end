@@ -67,7 +67,7 @@ class Hero {
         this.startX = this.step * 2;
         this.x = this.startX;
         this.y = this.startY;
-        this.sprite = 'images/char-boy.png';
+        this.sprite = 'images/char-horn-girl.png';
     }
 
     resetHero() {
