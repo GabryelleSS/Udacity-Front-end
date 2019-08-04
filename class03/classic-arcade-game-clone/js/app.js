@@ -61,11 +61,18 @@ document.addEventListener('keyup', function(e) {
 
 class Hero {
     constructor() {
-        this.x = 200;
-        this.y = 400;
-        this.jump = 88;
         this.step = 100;
+        this.jump = 88;
+        this.startY = (this.jump * 4) + 55;
+        this.startX = this.step * 2;
+        this.x = this.startX;
+        this.y = this.startY;
         this.sprite = 'images/char-boy.png';
+    }
+
+    resetHero() {
+        this.x = this.startX;
+        this.y = this.startY;
     }
 
     render() {
@@ -97,15 +104,25 @@ class Hero {
             }
         }
     }
+
+    update() {
+        for(let enemy of allEnemies) {
+            if(parseInt((enemy.x) + 50) >= this.x && parseInt(enemy.x) <= this.x) {
+                if(this.y == enemy.y) {
+                    alert('Game over');
+                    this.resetHero();
+                }
+            }
+        }
+    }
 }
 
 let player = new Hero();
-let enemy01 = new Enemy(-100, 50, 200);
-let enemy02 = new Enemy(-250, 130, 150);
-let enemy03 = new Enemy(0, 210, 400);
+let enemy01 = new Enemy(-100, 50, 100);
+let enemy02 = new Enemy(-250, 138, 150);
+let enemy03 = new Enemy(0, 226, 400);
 let enemy04 = new Enemy(50, 50, 180);
-let enemy05 = new Enemy(-250, 130, 300);
+let enemy05 = new Enemy(-250, 138, 300);
 
 var allEnemies = [];
 allEnemies.push(enemy01, enemy02, enemy03, enemy04, enemy05);
-console.log(allEnemies)
