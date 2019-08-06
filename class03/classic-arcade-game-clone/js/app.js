@@ -1,7 +1,9 @@
-//
+// Creating counters
 
 var contadorDeath = 0;
 var contadorWin = 0;
+
+// added scoreboard
 
 let cotainerScoreGame = document.querySelector('.container-score-game');
 
