@@ -1,20 +1,15 @@
 # Classic Arcade Game Clone Project
 
-## Table of Contents
+Este é um projeto da Udacity sobre JavaScript orientado a objeto.
 
-- [Instructions](#instructions)
-- [Contributing](#contributing)
+## About Game
+
+To play clone the folder and go to the 'classic-arcade-game-clone' folder and enter the '' index.html '' file. The game will start by itself.
 
 ## Instructions
 
-Use this [rubric](https://review.udacity.com/#!/rubrics/15/view) for self-checking your submission.
-
-Make sure the functions you write are **object-oriented** - either class functions (like `Player` and `Enemy`) or class prototype functions such as `Enemy.prototype.checkCollisions`. Also make sure that the keyword `this` is used appropriately within your class and class prototype functions to refer to the object the function is called upon.
-
-Your **README.md** file should be updated with instructions on both how to 1. Run and 2. Play your arcade game.
-
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+The objective of the game is to get to the water side, avoiding being caught by the enemies (insect). When the player hits the water side, you score a point and return to the beginning of the game. If you are caught you will return to the first start.
 
 ## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+Use the arrow keys on the keyboard to control the player's direction of movement.
