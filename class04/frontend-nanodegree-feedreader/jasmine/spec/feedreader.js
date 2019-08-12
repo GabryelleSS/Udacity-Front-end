@@ -63,4 +63,26 @@ $(function() {
             expect(check).toBeGreaterThan(0);
         });
     });
+
+    // Create New Feed Selection
+
+    describe('New Feed Selection', function() {
+        let initialFeed;
+
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                initialFeed = $('.feed').html();
+
+                loadFeed(1, function() {
+                    done();
+                });
+            });
+        });
+
+        it('New feed uploaded', function() {
+            let newFeed = $('.feed').html();
+
+            expect(newFeed).not.toBe(initialFeed);
+        });
+    });
 }());
