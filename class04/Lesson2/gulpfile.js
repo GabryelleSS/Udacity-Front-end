@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const gulp = require("gulp");
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
@@ -17,3 +18,12 @@ gulp.task("styles", function() {
     )
     .pipe(gulp.dest("./css"));
 });
+=======
+// Dizemos que o gulp é necessario:
+const gulp = require("gulp");
+
+// Definimos a tarefa padrao:
+gulp.task("default", function() {
+    
+});
+>>>>>>> 6eb214490216cbcc9c4b4287217a371ada14441e
