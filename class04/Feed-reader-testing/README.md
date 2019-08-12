@@ -30,7 +30,7 @@ The click event is used to check if the 'menu-hidden' class exists to ensure the
 
 Checks if the feed was successfully rendered
 
-## Test New Feed Selection
+## Testing New Feed Selection
 
 Checks if there is more than one Feed.
 
