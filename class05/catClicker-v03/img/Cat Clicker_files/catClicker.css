@@ -1,0 +1,21 @@
+.score {
+    display: flex;
+    justify-content: center;
+}
+
+.score p {
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.container-img-cat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.container-img-cat img {
+    padding: 60px;
+    width: 150px;
+}

@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.menu-cats img {
+    width: 150px;
+    padding: 30px 0;
+}
+
+.menu-cats li {
+    list-style: none;
+}
+
+.info-cats {
+    display: none;
+}
+
+.info-cats.--is-visible {
+    display: block;
+}

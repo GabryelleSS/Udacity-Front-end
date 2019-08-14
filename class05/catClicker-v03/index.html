@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Cat Clicker</title>
+        <link rel="stylesheet" type="text/css" href="css/catClicker.css">
+        <script defer src="js/catClicker.js"></script>
+    </head>
+    <body> 
+        <div class="menu-cats"></div>
+        <div class="container-cats"></div>
+
+        <script>
+            window.onload = function() {
+                catClicker.init('.menu-cats');
+                catClicker.containerCats();
+            }
+        </script>
+    </body>
+<html>

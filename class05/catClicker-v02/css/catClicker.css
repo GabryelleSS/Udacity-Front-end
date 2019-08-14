@@ -1,0 +1,41 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-cats {
+    width: 215px;
+}
+
+.block-cat {
+    padding: 20px 0;
+}
+
+.img-cat {
+    width: 150px;
+    padding: 10px 45px;
+}
+
+.btn-open-content {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-open-content button {
+    padding: 10px;
+    background-color: #fff;
+    border: solid 1px red;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+}
+
+.btn-open-content button:hover {
+    background-color: yellow;
+    border: solid 1px red; 
+}
+
+ul {
+    display: none;
+}
