@@ -50,7 +50,7 @@ $(function() {
     // A test that ensures when the loadFeed
     // function is called and completes its work
 
-         it('has at least 1 entry', function() {
+         it('Feed uploaded', function() {
            expect($('.feed .entry').length).not.toBeLessThan(1);
          });
     });
