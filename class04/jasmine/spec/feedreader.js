@@ -7,33 +7,52 @@ $(function() {
         });
 
         for(let feed of allFeeds) {
-            it('are defined', function() {
+            it('URLs are defined', function() {
                 expect(feed.url).toBeDefined();
                 expect(feed.url.length).not.toBe(0);
             });
         };
 
         for(let feed of allFeeds) {
-            it('each have defined non-empty UR', function() {
+            it('names are defined', function() {
                 expect(feed.name).toBeDefined();
                 expect(feed.name.length).not.toBe(0);
             });
         }
     });
 
-    /* TODO: Write a new test suite named "The menu" */
+    // Menu
 
     describe('The menu', function() {
+
+        // Checks if menu is hidden by default
+
         it('Menu hiding defined', function() {
             expect(loadFeed).toBeDefined();
         });
+
+        // Checks for click event
+
+        it('working toggle on click event', function () {
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
     });
 
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
-         */
+    describe('Initial Entries', function() {
+        beforeEach(function(done) {
+            loadFeed(0, done);
+        });
+
+//         A test that ensures when the loadFeed
+//         function is called and completes its work
+
+         it('can be loaded', function() {
+           expect($('.feed .entry').length).not.toBeLessThan(1);
+         });
+    });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
