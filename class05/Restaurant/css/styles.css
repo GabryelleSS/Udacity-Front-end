@@ -433,6 +433,23 @@ li {
   }
 }
 
+@media(min-width: 320px) {
+  #restaurants-list {
+    display: block;
+  }
+
+  #restaurants-list li {
+    width: 100%;
+  }
+
+  #restaurants-list a {
+    height: 40px;
+    width: 130px;
+    font-size: 14pt;
+    line-height: 40px;
+  }
+}
+
 @media(min-width: 700px) {
   #restaurants-list {
     display: flex;
