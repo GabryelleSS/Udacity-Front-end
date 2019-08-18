@@ -433,6 +433,14 @@ li {
   }
 }
 
+@media(min-width: 700px) {
+  #restaurants-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
 @media(min-width: 1000px) {
   .filter-options {
     display: block;
@@ -446,6 +454,12 @@ li {
 
   #restaurant-hours tr td {
     font-size: 14pt;
+  }
+
+  #restaurants-list {
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
   }
 }
 
