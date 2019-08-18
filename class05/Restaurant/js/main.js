@@ -1,14 +1,7 @@
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-  .register('/service-worker.js')
-  .catch(function(err) {
-    console.log(err);
-  });
-}
-
 let restaurants,
   neighborhoods,
-  cuisines
+  cuisines;
+
 var newMap
 var markers = []
 
@@ -217,3 +210,11 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
+
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+  .register('js/serveWorker.js')
+  .catch(function(err) {
+  console.error(err);
+  });
+}
