@@ -1,3 +1,11 @@
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+  .register('/service-worker.js')
+  .catch(function(err) {
+    console.log(err);
+  });
+}
+
 let restaurants,
   neighborhoods,
   cuisines
@@ -78,7 +86,7 @@ initMap = () => {
         scrollWheelZoom: false
       });
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-    mapboxToken: 'pk.eyJ1IjoiZ2FicnllbGxlIiwiYSI6ImNqemZ1bWc0NDBmNzEzbnJzcWQwazZuZzQifQ.uFy12znGZDJwmdwQIlfDfQ',
+    mapboxToken: 'pk.eyJ1IjoiZ2FicnllbGxlIiwiYSI6ImNqemZ1bGNvMDBicnUzbnM5dXZidW9ibDMifQ.n67B4WTfNuWd_JOyRgseMQ',
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
       '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -178,6 +186,7 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  more.tabIndex = '3';
   li.append(more)
 
   return li
@@ -208,4 +217,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
-

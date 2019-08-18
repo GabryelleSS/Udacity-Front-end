@@ -82,8 +82,12 @@ nav h1 a {
 /* Add a slash symbol (/) before/behind each list item */
 #breadcrumb li+li:before {
     padding: 8px;
-    color: black;
+    color: white;
     content: "/\00a0";
+}
+
+li {
+  color: #fff;
 }
 
 /* Add a color to all links inside the list */
@@ -216,9 +220,11 @@ nav h1 a {
   margin: 15px 0 30px;
   text-transform: uppercase;
   line-height: 1.1;
+  padding-top: 100px;
 }
 #restaurant-img {
-	width: 90%;
+  max-width: 70%;
+  height: auto;
 }
 #restaurant-address {
   font-size: 12pt;
@@ -274,9 +280,86 @@ nav h1 a {
   color: #666;
 }
 
+@media(min-width: 200px) {
+  h1#restaurant-name {
+    font-size: 11px;
+  }
+
+  ul#breadcrumb li {
+    font-size: 15px;
+  }
+
+  #restaurant-cuisine {
+    width: 70%;
+  }
+
+  #restaurant-address {
+    font-size: 12px;
+    margin-right: 150px;
+    text-align: center;
+  }
+
+  #restaurant-hours tr td {
+    font-size: 25px;
+    display: block;
+    margin-right: 140px;
+  }
+
+  #reviews-list {
+    display: block;
+    width: 382px;
+    margin-left: -30px;
+  }
+
+  #reviews-list li p {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .leaflet-top {
+    margin: 30px 0;
+  }
+
+  .leaflet-control-zoom-in {
+    padding: 17px;
+  }
+
+  .leaflet-control-zoom-out {
+    padding: 17px;
+  }
+
+  .inside #footer {
+    justify-content: start;
+  }
+}
 @media(min-width: 230px) {
   header nav {
     height: 110px;
+  }
+
+  ul#breadcrumb li {
+    font-size: 20px;
+  }
+
+  img#restaurant-img {
+    max-width: 80%;
+  }
+
+  #restaurant-cuisine {
+    width: 80%;
+  }
+
+  #restaurant-hours tr td {
+    font-size: 32px;
+    padding: 3px 0px;
+  }
+
+  #reviews-list {
+    width: 460px;
+  }
+
+  .inside #footer {
+    justify-content: center;
   }
 
   nav h1 a {
@@ -322,7 +405,31 @@ nav h1 a {
   }
 
   ul#breadcrumb {
-    height: 1px;
+    background: #252831;
+    height: 80px;
+  }
+}
+
+@media(min-width: 300px) {
+  img#restaurant-img {
+    max-width: 90%;
+  }
+
+  #restaurant-cuisine {
+    width: 90%;
+  }
+
+  #restaurant-address {
+    font-size: 14px;
+    margin-right: 60px;
+  }
+
+  #reviews-list {
+    width: 105%;
+  }
+
+  #reviews-list li p {
+    font-size: 14pt;
   }
 }
 
@@ -335,6 +442,10 @@ nav h1 a {
   
   #footer {
     display: block;
+  }
+
+  #restaurant-hours tr td {
+    font-size: 14pt;
   }
 }
 
